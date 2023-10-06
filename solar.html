@@ -98,7 +98,7 @@ var solidLabels = false;                  // start simulation with solid renderi
 var Venus = new Trajectory("Venus",0.72333199,3.39471,54.9,0.00677323,76.7,181.98,0.615) ;
 var Earth = new Trajectory("theEarth",1,0.00005,102.94719,0.01671022,0,100.47,1) ;
 // Source: http://neo.jpl.nasa.gov/cgi-bin/neo_elem?type=PHA;hmax=all;max_rows=20;action=Display%20Table;show=1&sort=moid&sdir=ASC
-var TN1 = new Trajectory("2004TN1"	,	2.74	, 8.4	,  	233.5, 0.698, 214.0,  66.6, 4.55) ;
+var TN1 = new Trajectory("2004TN1",2.74	, 8.4,233.5, 0.698,214.0,6.6,4.55) ;
 
 
 //http://www.stjarnhimlen.se/comp/ppcomp.html
@@ -447,7 +447,7 @@ function updatePosition()
     addNode("theEarth", 0.2, 0, 0.8,0.15) ;
 	
 	  
-	addNode("2004TN1", 0.3, 0.3, 0.3,0.05) ;
+    addNode("2004TN1", 0.3, 0.3, 0.3,0.05) ;
  
 
 	  for (var hB in asteroidLabels) {
