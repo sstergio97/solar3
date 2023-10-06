@@ -368,6 +368,7 @@ function updatePosition()
 		 omat.setAttribute("transparency",opacity) ;
 	   }
 	}
+
 //-----------------------------------------------------------------------------------------------------
 	function traceOrbits()  
 	{  // Generate line segments from points around the trajectory of the orbiting objects.
@@ -472,6 +473,22 @@ function updatePosition()
    <input type="range" id="myRange" name="points" min="1" max="100" value="100" step="1" onchange="showValue(this.value)"/><br>&nbsp; &nbsp;
    <input type="button" id="orbits" value="Toggle Orbits" onclick="toggleOrbits();" />&nbsp; 
    <input type="button" id="labels" value="Toggle labels" onclick="toggleLabels();" />
+	//Submit form
+	  <form>
+  a: <input type="number" name="a" id="a"><br>
+  b: <input type="number" name="b" id="b"><br>
+  <button onclick="add()">Add</button>
+</form>
+
+<script>
+  function add() {
+    var a = document.getElementById('a').value;
+    var b = document.getElementById('b').value;
+
+    var sum = parseInt(a) + parseInt(b);
+    alert(sum);
+  }
+</script>
   <!-- <span id="range">0</span>  -->
    <br>
    <p class="case" align="center"><i>*Objects are not to scale</i></p> 
