@@ -82,6 +82,32 @@ pos[2] = r * (Math.sin(aP + theta) * Math.sin(oI)) ;
 
 return pos ;
 }
+<form>
+  Name this: <input type="text" name="Name" id="Name"><br>
+  sma: <input type="number" name="sma" id="sma"><br>
+  oi: <input type="number" name="oi" id="oi"><br>
+ap: <input type="number" name="ap" id="ap"><br>
+	oe: <input type="number" name="oe" id="oe"><br>
+	an: <input type="number" name="an" id="an"><br>
+	ame: <input type="number" name="ame" id="ame"><br>
+	sid: <input type="number" name="sid" id="sid"><br>
+  <button onclick="NEWAST()">Add</button>
+</form>
+
+<script>
+  function NEWAST {
+    var Name = document.getElementById('Name').value;
+    var sma = document.getElementById('sma').value;
+    var oi = document.getElementById('oi').value;
+    var ap = document.getElementById('ap').value;
+	      var oe = document.getElementById('oe').value;
+    var an = document.getElementById('an').value;
+	      var ame = document.getElementById('ame').value;
+    var sid = document.getElementById('sid').value;
+    var NEW = new Trajectory(Name, sma, oi, ap, oe, an, ame, sid)
+    alert(Επιτυχής! Φύγαμε για εκτόξευση);
+
+  }
 /*----------------------------------------------------------------------------------------------*
  *                            {--- Global variables --}                                         *
  *----------------------------------------------------------------------------------------------*/
@@ -104,7 +130,7 @@ var TN1 = new Trajectory("2004TN1",2.74	, 8.4,233.5, 0.698,214.0,6.6,4.55) ;
 //http://www.stjarnhimlen.se/comp/ppcomp.html
 //var Moon = new Trajectory("theMoon",0.15,5.14,318.0634,0.0549006,125.1228,64,0.3) ;
 // Create an array of the heavenly bodies.
-var heavenlyBodies = [Earth, Venus, TN1] ;
+var heavenlyBodies = [Earth, Venus, TN1, NEW] ;
 var asteroidLabels = ["2004TN1"] ; 
 //------------------------------------- end of global variables -----------------------------------------------------------------
 
@@ -449,6 +475,7 @@ function updatePosition()
 	
 	  
     addNode("2004TN1", 0.3, 0.3, 0.3,0.05) ;
+addNode(Name, 0.9, 0.9, 0.9,0.15) ;
  
 
 	  for (var hB in asteroidLabels) {
@@ -473,34 +500,8 @@ function updatePosition()
    <input type="range" id="myRange" name="points" min="1" max="100" value="100" step="1" onchange="showValue(this.value)"/><br>&nbsp; &nbsp;
    <input type="button" id="orbits" value="Toggle Orbits" onclick="toggleOrbits();" />&nbsp; 
    <input type="button" id="labels" value="Toggle labels" onclick="toggleLabels();" />
-// Submit form
-<form>
-  Name this: <input type="text" name="Name" id="Name"><br>
-  sma: <input type="number" name="sma" id="sma"><br>
-  oi: <input type="number" name="oi" id="oi"><br>
-ap: <input type="number" name="ap" id="ap"><br>
-	oe: <input type="number" name="oe" id="oe"><br>
-	an: <input type="number" name="an" id="an"><br>
-	ame: <input type="number" name="ame" id="ame"><br>
-	sid: <input type="number" name="sid" id="sid"><br>
-  <button onclick="NEWAST">Add</button>
-</form>
 
-<script>
-  function NEWAST {
-    var Name = document.getElementById('Name').value;
-    var sma = document.getElementById('sma').value;
-    var oi = document.getElementById('oi').value;
-    var ap = document.getElementById('ap').value;
-	      var oe = document.getElementById('oe').value;
-    var an = document.getElementById('an').value;
-	      var ame = document.getElementById('ame').value;
-    var sid = document.getElementById('sid').value;
-    var NEW = new Trajectory(Name, sma, oi, ap, oe, an, ame, sid)
-    alert(Επιτυχής! Φύγαμε για εκτόξευση);
-var heavenlyBodies = [Earth, Venus, TN1, NEW] ;
-addNode(Name, 0.9, 0.9, 0.9,0.15) ;
-  }
+
 </script>
   <!-- <span id="range">0</span>  -->
    <br>
