@@ -473,20 +473,33 @@ function updatePosition()
    <input type="range" id="myRange" name="points" min="1" max="100" value="100" step="1" onchange="showValue(this.value)"/><br>&nbsp; &nbsp;
    <input type="button" id="orbits" value="Toggle Orbits" onclick="toggleOrbits();" />&nbsp; 
    <input type="button" id="labels" value="Toggle labels" onclick="toggleLabels();" />
-	//Submit form
-	  <form>
-  a: <input type="number" name="a" id="a"><br>
-  b: <input type="number" name="b" id="b"><br>
-  <button onclick="add()">Add</button>
+// Submit form
+<form>
+  Name this: <input type="text" name="Name" id="Name"><br>
+  sma: <input type="number" name="sma" id="sma"><br>
+  oi: <input type="number" name="oi" id="oi"><br>
+ap: <input type="number" name="ap" id="ap"><br>
+	oe: <input type="number" name="oe" id="oe"><br>
+	an: <input type="number" name="an" id="an"><br>
+	ame: <input type="number" name="ame" id="ame"><br>
+	sid: <input type="number" name="sid" id="sid"><br>
+  <button onclick="NEWAST">Add</button>
 </form>
 
 <script>
-  function add() {
-    var a = document.getElementById('a').value;
-    var b = document.getElementById('b').value;
-
-    var sum = parseInt(a) + parseInt(b);
-    alert(sum);
+  function NEWAST {
+    var Name = document.getElementById('Name').value;
+    var sma = document.getElementById('sma').value;
+    var oi = document.getElementById('oi').value;
+    var ap = document.getElementById('ap').value;
+	      var oe = document.getElementById('oe').value;
+    var an = document.getElementById('an').value;
+	      var ame = document.getElementById('ame').value;
+    var sid = document.getElementById('sid').value;
+    var NEW = new Trajectory(Name, sma, oi, ap, oe, an, ame, sid)
+    alert(Επιτυχής! Φύγαμε για εκτόξευση);
+var heavenlyBodies = [Earth, Venus, TN1, Name] ;
+addNode(Name, 0.9, 0.9, 0.9,0.15) ;
   }
 </script>
   <!-- <span id="range">0</span>  -->
